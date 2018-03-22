@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <!--style 是 css 样式, css 主要用来处理界面的展示效果-->
+    <style>
+        h1 {
+            color: #333333;
+            font-size: 48px;
+            text-shadow: 3px 3px 3px #666666;
+        }
+    </style>
+    <script>
+        function changeColor() {
+            document.getElementsByTagName('h1')[0].style.color = '#ff0000'
+        }
+    </script>
+</head>
+<body>
+<!--这是一个 h1 大小的字体-->
+<h1 align="center" onclick="changeColor()">hello world</h1>
+</body>
+</html>
