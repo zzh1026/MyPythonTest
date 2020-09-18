@@ -12,7 +12,7 @@ from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentClo
 from tencentcloud.ms.v20180408 import ms_client, models
 
 try:
-    cred = credential.Credential("AKIDjTGsJapdq8QH8uqq56uSlpjWm0DPrTCn", "qY8nQvVGpwxoXMDvduAYkXCi50icK0TK")
+    cred = credential.Credential("", "")
     httpProfile = HttpProfile()
     httpProfile.endpoint = "ms.tencentcloudapi.com"
 
