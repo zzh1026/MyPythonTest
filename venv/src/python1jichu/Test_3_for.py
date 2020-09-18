@@ -18,21 +18,21 @@ for named in name:
     print(named)
 
 # range()函数，可以生成一个整数序列，再通过list()函数可以转换为list。比如range(5)生成的序列是从0开始小于5的整数
-sum = 0
+sums = 0
 for i in range(101):
     sum += i
-print(sum)
+print(sums)
 
 # print(list(range(10)))
 # print(range(10))
 # print(list(range(20,41)))
 
-sum = 0
+sums = 0
 n = 99
 while n > 0:
-    sum += n
+    sums += n
     n -= 2
-print(sum)
+print(sums)
 
 # 请利用循环依次对list中的每个名字打印出Hello, xxx!：
 L = ['Bart', 'Lisa', 'Adam']

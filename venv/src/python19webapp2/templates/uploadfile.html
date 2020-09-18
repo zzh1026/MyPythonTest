@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+    function showDialog(msg) {
+        alert(msg)
+    }
+
+    $(function () {
+        $('a#test').bind('click', function () {
+            $.getJSON('/background_process_test',
+                function (data) {
+                    //do nothing
+                });
+            return false;
+        });
+    });
+
+    function checkInputFile() {
+        textValue = document.getElementById('textfield').value
+        if (textValue == '') {
+            showDialog('请先选择要上传的文件')
+            return
+        }
+
+    }
+
+    function checkOutputFile() {
+
+    }
+
+    function downLoadOutputFile() {
+        var $form = $('<form method="GET"></form>');
+        $form.attr('action', '../datas/6B.xlsx');
+        $form.appendTo($('body'));
+        $form.submit();
+    }
+
+</script>
+
+<style type="text/css">
+    body {
+        font-size: 14px;
+        align-text: center;
+    }
+
+    input {
+        vertical-align: middle;
+        margin: 0;
+        padding: 0
+    }
+
+    .file-box {
+        position: relative;
+        width: 450px;
+        margin: 0px auto;
+    }
+
+    .link {
+        position: relative;
+        padding: 15px;
+        width: 450px;
+        margin: 0px auto;
+    }
+
+    .txt {
+        height: 22px;
+        border: 1px solid #cdcdcd;
+        width: 180px;
+    }
+
+    .btn {
+        background-color: #FFF;
+        border: 1px solid #CDCDCD;
+        height: 24px;
+        width: 70px;
+    }
+
+    .file {
+        position: absolute;
+        top: 0;
+        right: 80px;
+        height: 24px;
+        filter: alpha(opacity:0);
+        opacity: 0;
+        width: 260px
+    }
+</style>
+<div>
+    <div class="file-box">
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type='text' name='textfield' id='textfield' class='txt'/>
+            <input type='button' class='btn' value='浏览...'/>
+            <input type="file" name="fileField" class="file" id="fileField" size="28"
+                   onchange="document.getElementById('textfield').value=this.value"/>
+            <input type="button" name="submit" class="btn" value="上传" onclick="checkInputFile()"/>
+        </form>
+    </div>
+
+    <div class="link">
+        <label>请输入间隔步长</label>
+
+        <input type="number" maxlength="13" placeholder="请输入间隔步长"
+               name="buchang"
+               value="1000000">
+    </div>
+
+    <div class="link">
+        <label>请输入数据源表头名称</label>
+
+        <input type="text" placeholder="请输入数据源表头名称"
+               name="title_name"
+               value="position">
+    </div>
+
+    <div class="link">
+        <input type='button' class='btn' value='点击下载' onclick="checkOutputFile()"/>
+    </div>
+</div>
+</body>
+</html>

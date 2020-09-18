@@ -9,11 +9,11 @@
 
 height = 1.75
 weight = 80.5
-list = ('过轻', '正常', '过重', '肥胖', '严重肥胖')
+lists = ('过轻', '正常', '过重', '肥胖', '严重肥胖')
 
 bmi = weight / (height * height)
 
-index = 0;
+index = 0
 if bmi < 18.5:
     index = 0
 elif bmi < 25:
@@ -25,4 +25,4 @@ elif bmi < 32:
 else:
     index = 4
 
-print('小明的身高为:{0}cm,体重为:{1}kg,其BMI = {2:.4f},其体重 -{3}'.format(height, weight, bmi, list[index]))
+print('小明的身高为:{0}cm,体重为:{1}kg,其BMI = {2:.4f},其体重 -{3}'.format(height, weight, bmi, lists[index]))

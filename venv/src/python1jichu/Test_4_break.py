@@ -11,8 +11,6 @@ while n <= 100:
     n = n + 1
 print('END')
 
-
-
 # continue
 # 在循环过程中，也可以通过continue语句，跳过当前的这次循环，直接开始下一次循环。
 
