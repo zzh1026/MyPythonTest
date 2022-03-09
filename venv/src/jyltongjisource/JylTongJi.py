@@ -3,19 +3,19 @@
 
 # Created by zhaozehui at 2019/11/29
 # 靳玉丽的统计数据,根据步长统计区段内个数
-import PyInstaller
 __author__ = 'zzh'
 
 import pandas as pd  # 数据处理
 
 # 元数据位置 , 需要设置
-datas = pd.read_excel('C:\\Users\\zhaozehui\\Desktop\\6B.xlsx')
+datas = pd.read_excel('/Users/didi/Documents/num_to_zzh.xlsx')
 
-# 要分割的步长, 需要设置 ,此处为1M
-dT = 1000000
+# 要分割的步长, 需要设置 ,此处单位为M
+dM = 1000000
+dT = dM
 
 # 输出的位置,需要设置
-resultPath = 'C:\\Users\\zhaozehui\\Desktop\\resultsss.xlsx'
+resultPath = '/Users/didi/Documents/num_to_zzh_result_%sM.xlsx' % (dT // dM)
 
 # 打印头,看数据是否准确
 # print(datas.head())
@@ -30,7 +30,7 @@ qujian = [start]
 qujian_lable = []
 
 # 拿到 position 列的数据
-datas = datas['position']
+datas = datas['Start']
 # heads = datas.head()
 # print(str(heads))
 
@@ -38,7 +38,7 @@ datas = datas['position']
 while True:
     end = start + dT
     # 标签添加数据内容为 [0M-1M, 1M-2M ...]等等用来进行自己查看,这个可以不使用
-    qujian_lable.append('%sM- %sM' % (start / dT, end / dT))
+    qujian_lable.append('%sM- %sM' % (start / dM, end / dM))
     # 完善区间,用来最后对数据进行分割统计,内容为 [0,dT, 2*dT,3*dT...]
     qujian.append(end)
     start = end
